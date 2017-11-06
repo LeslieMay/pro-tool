@@ -1,11 +1,11 @@
-# cli-tool
+# pro-tool
 前端脚手架，可以自定义模板，引用远程仓库模板，支持对模板的增删改查
 
 项目使用：
 
-1.现在本地仓库进行git clone
+1.使用npm install -g pro-tool
 
-2.然后运行npm link
+2.然后运行npm link pro-tool
 
 3.然后命令pro-cli就已经构建成功
 可以使用pro-cli去查看命令
