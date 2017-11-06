@@ -1,5 +1,5 @@
 {
-  "name": "cli-tool",
+  "name": "pro-tool",
   "version": "1.1.0",
   "description": "a tool for create a web project by templates",
   "main": "index.js",
