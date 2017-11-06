@@ -5,9 +5,7 @@
 
 1.使用npm install -g pro-tool
 
-2.然后运行npm link pro-tool
-
-3.然后命令pro-cli就已经构建成功
+2.然后命令pro-cli就已经构建成功
 可以使用pro-cli去查看命令
 
 ## pro-cli使用
