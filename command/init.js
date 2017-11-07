@@ -24,13 +24,13 @@ module.exports = () => {
     }
     gitUrl = config.tpl[tplName].url
     branch = config.tpl[tplName].branch
-	
+	let cmdStr = '';
 	if(isCopy=='y'){
 		// git命令，远程拉取项目并自定义项目名
-   	 	let cmdStr = `git clone ${gitUrl} ${projectName} && cd ${projectName} && git checkout ${branch} && rm -rf .git`
+   	 	cmdStr = `git clone ${gitUrl} ${projectName} && cd ${projectName} && git checkout ${branch} && rm -rf .git`
 	}else{
 		// git命令，远程拉取项目并自定义项目名
-   		 let cmdStr = `git clone ${gitUrl} ${projectName} && cd ${projectName} && git checkout ${branch}`
+   		cmdStr = `git clone ${gitUrl} ${projectName} && cd ${projectName} && git checkout ${branch}`
 	}
 
     console.log(chalk.white('\n Start generating...'))
