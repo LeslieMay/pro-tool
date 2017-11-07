@@ -8,6 +8,11 @@ const chalk = require('chalk')
 module.exports = () => {
  co(function *() {
     // 处理用户输入
+    	let isCopy = yield prompt("Do you want get a duplicate project?(y|n):");
+    	if(isCopy!='y' &&  isCopy!='n'){
+		 console.log(chalk.red('\n sorry, input is illegal!'))
+        process.exit()
+	}
       let tplName = yield prompt('Template name: ')
       let projectName = yield prompt('Project name: ')
       let gitUrl
@@ -19,9 +24,14 @@ module.exports = () => {
     }
     gitUrl = config.tpl[tplName].url
     branch = config.tpl[tplName].branch
-
-    // git命令，远程拉取项目并自定义项目名
-    let cmdStr = `git clone ${gitUrl} ${projectName} && cd ${projectName} && git checkout ${branch}`
+	
+	if(isCopy=='y'){
+		// git命令，远程拉取项目并自定义项目名
+   	 	let cmdStr = `git clone ${gitUrl} ${projectName} && cd ${projectName} && git checkout ${branch} && rm -rf .git`
+	}else{
+		// git命令，远程拉取项目并自定义项目名
+   		 let cmdStr = `git clone ${gitUrl} ${projectName} && cd ${projectName} && git checkout ${branch}`
+	}
 
     console.log(chalk.white('\n Start generating...'))
 
