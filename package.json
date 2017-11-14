@@ -17,5 +17,6 @@
     "co": "^4.6.0",
     "co-prompt": "^1.0.0",
     "commander": "^2.9.0"
-  }
+  },
+  "repository":"https://github.com/LeslieMay/pro-tool"
 }
